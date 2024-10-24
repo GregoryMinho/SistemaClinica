@@ -36,11 +36,11 @@
     $email_paciente = $_POST['email_paciente'];  
     $telefone_paciente =  $_POST['telefone_paciente'];
     $data_consulta = $_POST['data_consulta']; 
-    $hora_connsulta = $_POST['hora_connsulta']; 
+    $hora_consulta = $_POST['hora_consulta']; 
     $nome_medico =  $_POST['nome_medico']; 
     $especialidade =  $_POST['especialidade']; 
 
-    if ($id_paciente && $nome_paciente && $email_paciente && $telefone_paciente && $data_consulta && $hora_connsulta && $nome_medico && $especialidade) {
+    if ($id_paciente && $nome_paciente && $email_paciente && $telefone_paciente && $data_consulta && $hora_consulta && $nome_medico && $especialidade) {
 
         $sql = $pdo->prepare("INSERT INTO Consultas (id_paciente, nome_paciente, email_paciente, email, telefone, endereco, sexo)");
         $sql->bindValue(':id_paciente', $id_paciente);
@@ -48,7 +48,7 @@
         $sql->bindValue(':email_paciente', $email_paciente);
         $sql->bindValue(':telefone_paciente', $telefone_paciente);
         $sql->bindValue(':data_consulta', $data_consulta);
-        $sql->bindValue(':hora_connsulta', $hora_connsulta);
+        $sql->bindValue(':hora_consulta', $hora_consulta);
         $sql->bindValue(':nome_medico', $nome_medico);
         $sql->bindValue(':especialidade', $especialidade);
 

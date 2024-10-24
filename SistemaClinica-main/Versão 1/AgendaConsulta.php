@@ -12,8 +12,8 @@
     ?>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Agendar Consulta</h1>
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center">Agendar Consultas</h1>
         <form method="post" action="">
             <div class="form-group">
                 <label for="nome_paciente">Nome do Paciente:</label>
@@ -44,22 +44,24 @@
                 <input type="text" id="especialidade" name="especialidade" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary" name="Agendar">Agendar</button>
+            <a href="menuPaciente.php" class="btn btn-secondary">Voltar ao Menu</a>
         </form>
     </div>
     
     <?php
     if (isset($_POST['Agendar'])) {
-        $nome = $_POST['nome'];
-        $data_nascimento = $_POST['data_nascimento'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $endereco = $_POST['endereco'];
-        $sexo = $_POST['sexo'];
+        $nome_paciente = $_POST['nome_paciente'];
+        $email_paciente = $_POST['email_paciente'];
+        $telefone_paciente = $_POST['telefone_paciente'];
+        $data_consulta = $_POST['data_consulta'];
+        $hora_consulta = $_POST['hora_consulta'];
+        $nome_medico = $_POST['nome_medico'];
+        $especialidade = $_POST['especialidade'];
 
-        $sql = $pdo->prepare("INSERT INTO Pacientes (nome, data_nascimento, email, telefone, endereco, sexo) VALUES (?, ?, ?, ?, ?, ?)");
-        $sql->execute([$nome, $data_nascimento, $email, $telefone, $endereco, $sexo]);
+        $sql = $pdo->prepare("INSERT INTO Consultas (nome_paciente, email_paciente, telefone_paciente, data_consulta, hora_connsulta, nome_medico, especialidade) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $sql->execute([$nome_paciente, $email_paciente, $telefone_paciente, $data_consulta, $hora_consulta, $nome_medico, $especialidade]);
 
-        header("Location: CadastroPaciente.php");
+        header("Location: AgendaConsulta.php");
         exit;
     } else {
     }

@@ -13,7 +13,7 @@
     require 'conexao.php'
     ?>
 
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <h1 class="text-center">Cadastro de Pacientes</h1>
         <form action="" method="post">
             <div class="form-group">
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="data_nascimento">Data de Nascimento:</label>
-                <input type="text" class="form-control" id="data_nascimento" name="data_nascimento">
+                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -46,6 +46,7 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" name="Cadastrar">Cadastrar</button>
+            <a href="menuPaciente.php" class="btn btn-secondary">Voltar ao Menu</a>
         </form>
     </div>
 
