@@ -69,7 +69,7 @@
                         <td><?php echo $dados['endereco']; ?></td>
                         <td><?php echo $dados['sexo']; ?></td>
                         <td>
-                            <a href="excluir.php?id=<?= $dados['id']; ?>" class="btn btn-danger btn-sm">Excluir</a>
+                            <a href="excluir2.php?id=<?= $dados['id']; ?>" class="btn btn-danger btn-sm">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
